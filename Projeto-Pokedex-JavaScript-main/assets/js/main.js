@@ -43,3 +43,34 @@ loadMoreButton.addEventListener('click', () => {
     loadPokemonItens(offset, limit)
     }
 })
+
+// Seleciona os elementos da modal e do botão de abertura
+const modal = document.getElementById("myModal");
+const openModalButton = document.getElementById("openModalButton");
+const closeButton = document.querySelector(".close-button");
+
+// Função para abrir a modal
+function openModal() {
+    modal.style.display = "flex"; // Mostra a modal
+}
+
+// Função para fechar a modal
+function closeModal() {
+    modal.style.display = "none"; // Oculta a modal
+}
+
+// Evento para abrir a modal ao clicar no botão
+openModalButton.addEventListener("click", openModal);
+
+// Evento para fechar a modal ao clicar no "x"
+closeButton.addEventListener("click", closeModal);
+
+// Fecha a modal ao clicar fora da área de conteúdo
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+
+
